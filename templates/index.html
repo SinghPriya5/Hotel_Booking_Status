@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Predict Reservation Cancellation</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <header>
+        <h1>Hotel Booking Status</h1>
+    </header>
+    <main>
+        <div class="form-container">
+            <form action="/predict" method="post" class="form-grid">
+                <!-- Categorical Inputs -->
+                <div class="form-group">
+                    <label for="arrival_date_month">Arrival Date Month:</label>
+                    <select id="arrival_date_month" name="arrival_date_month" required>
+                        <option value="June">June</option>
+                        <option value="July">July</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="meal">Meal:</label>
+                    <select id="meal" name="meal" required>
+                        <option value="BB">Bed & Breakfast</option>
+                        <option value="HB">Half Board</option>
+                        <option value="FB">Full Board</option>
+                        <option value="SC">Self Catering</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="country">Meal:</label>
+                    <select id="country" name="country" required>
+                        <option value='PRT'>PRT</option>
+                        <option value='GBR'>GBR</option>
+                        <option value='USA'>USA</option>
+                        <option value='ESP'>ESP</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="market_segment">Market Segment:</label>
+                    <select id="market_segment" name="market_segment" required>
+                        <option value="Direct">Direct</option>
+                        <option value="Corporate">Corporate</option>
+                        <option value="Online TA">Online Travel Agent</option>
+                        <option value="Offline TA/TO">Offline Travel Agent/Tour Operator</option>
+                        <option value="Groups">Groups</option>
+                        <option value="Travel Agent">Travel Agent</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="distribution_channel">Distribution Channel:</label>
+                    <select id="distribution_channel" name="distribution_channel" required>
+                        <option value="Direct">Direct</option>
+                        <option value="Corporate">Corporate</option>
+                        <option value="TA/TO">Travel Agent/Tour Operator</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="reserved_room_type">Reserved Room Type:</label>
+                    <select id="reserved_room_type" name="reserved_room_type" required>
+                        <option value="A">A</option>
+                        <option value="B">B</option>
+                        <option value="C">C</option>
+                        <option value="D">D</option>
+                        <option value="E">E</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="assigned_room_type">Assigned Room Type:</label>
+                    <select id="assigned_room_type" name="assigned_room_type" required>
+                        <option value="A">A</option>
+                        <option value="B">B</option>
+                        <option value="C">C</option>
+                        <option value="D">D</option>
+                        <option value="E">E</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="deposit_type">Deposit Room Type:</label>
+                    <select id="deposit_type" name="deposit_type" required>
+                        <option value="No Deposit">No Deposit</option>
+                        <option value="Refundable">Refundable</option>
+                        <option value="Non Refund">Non Refund</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="customer_type">Customer Type:</label>
+                    <select id="customer_type" name="customer_type" required>
+                        <option value="Transient">Transient</option>
+                        <option value="Contract">Contract</option>
+                        <option value="Transient-Party">Transient-Party</option>
+                    </select>
+                </div>
+                
+                <!-- Numerical and Date Inputs -->
+                <div class="form-group">
+                    <label for="lead_time">Lead Time:</label>
+                    <input type="number" step="1" id="lead_time" name="lead_time" required>
+                </div>
+                <div class="form-group">
+                    <label for="arrival_date_year">Arrival Date Year:</label>
+                    <input type="number" id="arrival_date_year" name="arrival_date_year" required>
+                </div>
+                <div class="form-group">
+                    <label for="arrival_date_week_number">Arrival Date Week Number:</label>
+                    <input type="number" id="arrival_date_week_number" name="arrival_date_week_number" required>
+                </div>
+                <div class="form-group">
+                    <label for="arrival_date_day_of_month">Arrival Date Day of Month:</label>
+                    <input type="number" id="arrival_date_day_of_month" name="arrival_date_day_of_month" required>
+                </div>
+                <div class="form-group">
+                    <label for="stays_in_weekend_nights">Stays in Weekend Nights:</label>
+                    <input type="number" id="stays_in_weekend_nights" name="stays_in_weekend_nights" required>
+                </div>
+                <div class="form-group">
+                    <label for="stays_in_week_nights">Stays in Week Nights:</label>
+                    <input type="number" id="stays_in_week_nights" name="stays_in_week_nights" required>
+                </div>
+                <div class="form-group">
+                    <label for="adults">Adults:</label>
+                    <input type="number" id="adults" name="adults" required>
+                </div>
+                <div class="form-group">
+                    <label for="children">Children:</label>
+                    <input type="number" id="children" name="children" required>
+                </div>
+                <div class="form-group">
+                    <label for="babies">Babies:</label>
+                    <input type="number" id="babies" name="babies" required>
+                </div>
+                <div class="form-group">
+                    <label for="is_repeated_guest">Is Repeated Guest:</label>
+                    <input type="number" id="is_repeated_guest" name="is_repeated_guest" required>
+                </div>
+                <div class="form-group">
+                    <label for="previous_cancellations">Previous Cancellations:</label>
+                    <input type="number" id="previous_cancellations" name="previous_cancellations" required>
+                </div>
+                <div class="form-group">
+                    <label for="previous_bookings_not_canceled">Previous Bookings Not Canceled:</label>
+                    <input type="number" id="previous_bookings_not_canceled" name="previous_bookings_not_canceled" required>
+                </div>
+                <div class="form-group">
+                    <label for="booking_changes">Booking Changes:</label>
+                    <input type="number" id="booking_changes" name="booking_changes" required>
+                </div>
+                <div class="form-group">
+                    <label for="agent">Agent:</label>
+                    <input type="text" id="agent" name="agent" required>
+                </div>
+                <div class="form-group">
+                    <label for="company">Company:</label>
+                    <input type="text" id="company" name="company" required>
+                </div>
+                <div class="form-group">
+                    <label for="days_in_waiting_list">Days in Waiting List:</label>
+                    <input type="number" id="days_in_waiting_list" name="days_in_waiting_list" required>
+                </div>
+                <div class="form-group">
+                    <label for="adr">ADR:</label>
+                    <input type="number" step="0.01" id="adr" name="adr" required>
+                </div>
+                <div class="form-group">
+                    <label for="required_car_parking_spaces">Required Car Parking Spaces:</label>
+                    <input type="number" id="required_car_parking_spaces" name="required_car_parking_spaces" required>
+                </div>
+                <div class="form-group">
+                    <label for="total_of_special_requests">Total of Special Requests:</label>
+                    <input type="number" id="total_of_special_requests" name="total_of_special_requests" required>
+                </div>
+                <div class="form-group">
+                    <input type="submit" value="Predict Cancellation">
+                </div>
+            </form>
+
+            {% if prediction is not none %}
+            <div class="result">
+                <h2>Prediction Result</h2>
+                <p>Cancellation Status: {{ prediction }}</p>
+            </div>
+            {% endif %}
+        </div>
+    </main>
+</body>
+</html>
