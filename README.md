@@ -1,164 +1,163 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hotel Reservation Booking Status Prediction</title>
-</head>
-<body>
+<p align="center">
+<img width='400' height='300' src="https://github.com/SinghPriya5/Hotel_Booking_Status/blob/main/static/hotel.gif"></p>
+<div style="text-align: center; color: #2c3e50; font-family: 'Trebuchet MS', sans-serif;">
+  <h1 style='color:#e74c3c; font-size: 3em; letter-spacing: 2px;'>✿ 𝓗𝓸𝓽𝓮𝓵 𝓑𝓸𝓸𝓴𝓲𝓷𝓰 𝓢𝓽𝓪𝓽𝓾𝓼 ✿</h1>
+</div>
+<img align="right" width="500" height="600" src="https://github.com/SinghPriya5/Breast_Cancer/blob/main/static/images/hotel.webp">
 
-<h1>Hotel Reservation Booking Status Prediction</h1>
+<h3>🏨 Table of Content</h3>
 
-<img src="images/project_banner.png" alt="Project Banner" style="width:100%; height:auto;">
+* [Problem Statement](#Problem-Statement)
+* [Goal](#Goal)
+* [Approach](#Approach)
+* [Data Collection](#Data-Collection)
+* [Project Various Steps](#Project-Various-Steps)
+    * [Data Visualization](#Data-Visualization)
+    * [Model Training](#Model-Training)
+    * [Model Evaluation](#Model-Evaluation)
+    * [Model Selection](#Model-Selection)
+    * [Model Dump](#Model-Dump)
+* [Tools Used](#Tools-Used)
+* [Model Accuracy](#Model-Accuracy)
+* [Continuous Improvement](#Continuous-Improvement)
+* [Deployed](#Deployed)
+* [Model Interpretation](#Model-Interpretation)
+* [Web View](#Web-View)
+* [Bug or Feature Request](#Bug-or-Feature-Request)
+* [Future Scope](#Future-Scope)
+* [Conclusion](#Conclusion)
 
-<h2>Project Overview</h2>
-<p>This project focuses on predicting the booking status of hotel reservations using machine learning techniques. By analyzing various factors like customer demographics, booking details, and behavioral data, we aim to accurately forecast whether a booking will be confirmed, canceled, or result in a no-show.</p>
+## <h3>🏨Problem Statement:</h3>
+<ul style="font-family: 'Courier New', monospace;">
+  <h2>Problem Statements for Hotel Booking Status</h2>
 
-<img src="images/workflow.png" alt="Prediction Workflow" style="width:100%; height:auto;">
+<ol>
+    <li>
+        <h3>Booking Status Analysis</h3>
+        <p><strong>Objective:</strong> Analyze the status of hotel bookings (confirmed, pending, canceled) across different time periods.</p>
+        <p><strong>Problem:</strong> How do booking statuses vary over time, and what patterns can be identified?</p>
+    </li>
+    <li>
+        <h3>Customer Demographics and Booking Preferences</h3>
+        <p><strong>Objective:</strong> Examine the demographics of customers and their booking preferences.</p>
+        <p><strong>Problem:</strong> What are the most common demographics among customers with different booking statuses, and are there any significant trends?</p>
+    </li>
+    <li>
+        <h3>Booking Frequency Analysis</h3>
+        <p><strong>Objective:</strong> Compare booking frequencies across different customer groups.</p>
+        <p><strong>Problem:</strong> How does booking frequency vary between different customer segments, and what insights can be drawn for marketing strategies?</p>
+    </li>
+    <li>
+        <h3>Revenue Analysis</h3>
+        <p><strong>Objective:</strong> Identify revenue trends based on booking status and customer demographics.</p>
+        <p><strong>Problem:</strong> Which booking statuses contribute the most to revenue, and how can this information be used for pricing strategies?</p>
+    </li>
+    <li>
+        <h3>Booking Trends by Location</h3>
+        <p><strong>Objective:</strong> Investigate booking trends based on hotel locations.</p>
+        <p><strong>Problem:</strong> How do booking trends differ between various hotel locations, and what factors influence these trends?</p>
+    </li>
+    <li>
+        <h3>Customer Feedback Analysis</h3>
+        <p><strong>Objective:</strong> Explore customer feedback and its correlation with booking status.</p>
+        <p><strong>Problem:</strong> What are the common feedback themes among customers with different booking statuses, and how can this information improve service quality?</p>
+    </li>
+</ol>
 
-<h2>Table of Contents</h2>
-<ul>
-    <li><a href="#dataset">Dataset</a></li>
-    <li><a href="#data-preprocessing">Data Preprocessing</a></li>
-    <li><a href="#feature-engineering">Feature Engineering</a></li>
-    <li><a href="#modeling">Modeling</a></li>
-    <li><a href="#evaluation-metrics">Evaluation Metrics</a></li>
-    <li><a href="#results">Results</a></li>
-    <li><a href="#conclusion">Conclusion</a></li>
-    <li><a href="#future-work">Future Work</a></li>
-    <li><a href="#requirements">Requirements</a></li>
-    <li><a href="#installation">Installation</a></li>
-    <li><a href="#usage">Usage</a></li>
-    <li><a href="#contributors">Contributors</a></li>
+## <h3>🏨Goal:</h3>
+<div style="font-family: 'Courier New', monospace; font-size: 1.1em;">
+  The main goals of analyzing hotel booking status are:
+  <ul>
+    <li><b>Optimize Booking Management:</b> Improve the management of hotel bookings by understanding trends and patterns.</li>
+    <li><b>Enhance Customer Experience:</b> Use insights to enhance customer satisfaction and tailor services to booking preferences.</li>
+    <li><b>Increase Revenue:</b> Identify opportunities to boost revenue through targeted pricing and marketing strategies.</li>
+    <li><b>Improve Forecasting:</b> Use data to predict future booking trends and manage resources more effectively.</li>
+    <li><b>Data-Driven Decisions:</b> Provide actionable insights for making informed decisions about hotel operations and customer interactions.</li>
+  </ul>
+</div>
+
+## <h3>🏨Approach:</h3>
+<div style="font-family: 'Courier New', monospace; font-size: 1.1em;">
+  The analysis involves Data Exploration, Data Cleaning, Feature Engineering, Model Building, and Model Testing. Various analytical techniques will be applied to determine key factors influencing booking statuses.
+</div>
+
+## <h3>🏨Data Collection:</h3>
+<ul style="font-family: 'Courier New', monospace; font-size: 1.1em;">
+  <li><b>Dataset:</b> A dataset containing customer bookings and their statuses.</li>
+  <li><b>Example Features:</b>
+  <ul>
+    <li><b>booking_status:</b> Status of the booking (e.g., confirmed, pending, canceled).</li>
+    <li><b>customer_demographics:</b> Information about the customer's age, gender, location, etc.</li>
+    <li><b>booking_date:</b> Date when the booking was made.</li>
+    <li><b>check_in_date:</b> Date when the customer checked in.</li>
+    <li><b>check_out_date:</b> Date when the customer checked out.</li>
+    <li><b>room_type:</b> Type of room booked (e.g., single, double, suite).</li>
+    <li><b>payment_method:</b> Method of payment used for the booking.</li>
+    <li><b>feedback:</b> Customer feedback or reviews related to their stay.</li>
+    <li><b>revenue:</b> Revenue generated from the booking.</li>
+  </ul>
+</li>
+  <li><b>Target Variable:</b> <b>booking_status:</b> Status of the booking.</li>
 </ul>
 
-<h2 id="dataset">Dataset</h2>
+## <h3>🏨Project Various Steps:</h3>
+Data Exploration I started exploring datasets using pandas, NumPy, matplotlib and seaborn.
 
-<h3>Data Source</h3>
-<p>The dataset comprises information on hotel bookings, covering customer demographics, booking details, and behavioral aspects.</p>
-
-<img src="images/dataset_overview.png" alt="Dataset Overview" style="width:100%; height:auto;">
-
-<h3>Features</h3>
-<ul>
-    <li><strong>Booking_ID:</strong> Unique identifier for each booking.</li>
-    <li><strong>No_of_Adults:</strong> Number of adults in the booking.</li>
-    <li><strong>No_of_Children:</strong> Number of children in the booking.</li>
-    <li><strong>No_of_Weekends:</strong> Number of weekend nights included in the booking.</li>
-    <li><strong>No_of_Weekdays:</strong> Number of weekday nights included in the booking.</li>
-    <li><strong>Type_of_Meal_Plan:</strong> Type of meal plan booked.</li>
-    <li><strong>Required_Car_Parking_Space:</strong> Whether a car parking space was requested.</li>
-    <li><strong>Room_Type_Reserved:</strong> Type of room reserved.</li>
-    <li><strong>Lead_Time:</strong> Number of days between booking and arrival.</li>
-    <li><strong>Arrival_year:</strong> Year of arrival.</li>
-    <li><strong>Arrival_month:</strong> Month of arrival.</li>
-    <li><strong>Market_segment_type:</strong> Market segment the booking belongs to.</li>
-    <li><strong>Repeated_Guest:</strong> Whether the guest is a repeated guest.</li>
-    <li><strong>No_of_Previous_Cancellations:</strong> Number of previous cancellations.</li>
-    <li><strong>No_of_Previous_Bookings_Not_Canceled:</strong> Number of previous non-canceled bookings.</li>
-    <li><strong>Avg_Price_Per_Room:</strong> Average price per room.</li>
-    <li><strong>No_of_special_requests:</strong> Number of special requests made.</li>
-    <li><strong>Booking_Status:</strong> Target variable indicating booking status (canceled/confirmed).</li>
+  ## <li><b>Data Visualization:</b>
+  Correlation matrix and visualizations like boxplots, count plots, pair plots, scatter plots, pie charts, etc., were used to understand relationships between variables.</li>
+  ## <li><b>Model Training:</b>
+    <ul>
+      <li><b>Split Data:</b> Dataset divided into training and test sets (80% training, 20% testing).</li>
+      <li><b>Model Training:</b> Models trained using the training data.</li>
+      <li><b>Hyperparameter Tuning:</b> Techniques like RandomizedSearchCV used to optimize model parameters.</li>
+    </ul>
+  </li>
+  
+  ## <li><b>Model Evaluation:</b>
+    Performance evaluated using metrics like Accuracy, Precision, Recall, Confusion matrix.</li>
+  ## <li><b>Model Selection:</b>
+    The best-performing model was selected based on evaluation metrics.</li>
+  ## <li><b>Model Dump:</b>
+ As per selected trained model is dumped to joblib format for app development.</li>
 </ul>
 
-<h2 id="data-preprocessing">Data Preprocessing</h2>
-<p>Data preprocessing involved several steps to prepare the dataset for modeling:</p>
-<ul>
-    <li><strong>Handling Missing Values:</strong> Imputation techniques were used for missing data.</li>
-    <li><strong>Encoding Categorical Variables:</strong> One-hot encoding and label encoding were applied to categorical features.</li>
-    <li><strong>Feature Scaling:</strong> Numerical features were normalized using MinMaxScaler.</li>
+## <h3>🏨Tools Used:</h3>
+<ul style="font-family: 'Courier New', monospace; font-size: 1.1em;">
+  <li>Jupyter Notebook</li>
+  <li>VS Code</li>
+  <li>PyCharm</li>
 </ul>
 
-<img src="images/preprocessing_pipeline.png" alt="Preprocessing Pipeline" style="width:100%; height:auto;">
+## <h3>🏨Model Accuracy:</h3>
+<div style="font-family: 'Courier New', monospace; font-size: 1.1em;">
+  The model achieved an accuracy of 96%.
+</div>
 
-<h2 id="feature-engineering">Feature Engineering</h2>
-<p>To enhance model performance, new features were engineered:</p>
-<ul>
-    <li><strong>Booking_Lead_Time_Group:</strong> Categorizing lead time into different bins.</li>
-    <li><strong>Customer_Loyalty_Index:</strong> Combining repeated guest status with previous booking behavior.</li>
+## <h3>🏨Continuous Improvement:</h3>
+<ul style="font-family: 'Courier New', monospace; font-size: 1.1em;">
+  <li><b>Model Monitoring:</b> Ongoing tracking of the model’s performance to ensure accuracy.</li>
+  <li><b>Retraining:</b> Periodic retraining with new data to adapt to changing trends.</li>
 </ul>
 
-<img src="images/feature_engineering.png" alt="Feature Engineering" style="width:100%; height:auto;">
+## <h3>🏨Deployed:</h3>
+Deployed on Render -- [Link](https://github.com/SinghPriya5/Breat_Cancer/issues)
 
-<h2 id="modeling">Modeling</h2>
-<p>Several machine learning models were developed and tested:</p>
-<ul>
-    <li><strong>Logistic Regression</strong></li>
-    <li><strong>Random Forest</strong></li>
-    <li><strong>Decision Tree</strong></li>
-    <li><strong>AdaBoost with Random Forest base estimator</strong></li>
-</ul>
+<br> The instructions are given on [Render Documentation](https://docs.render.com/deploy-flask) to deploy a web app.
 
-<h3>Hyperparameter Tuning</h3>
-<p>Grid Search and Random Search were utilized to optimize the model's hyperparameters.</p>
+<b>Model Deployment:</b> Deploy the model as a REST API using Flask. Hosted on Render for public access.
 
-<img src="images/model_comparison.png" alt="Model Comparison" style="width:100%; height:auto;">
+## <h3>🏨Model Interpretation:</h3>
+Analyzed and interpreted the model’s predictions to ensure meaningful and accurate results.
 
-<h2 id="evaluation-metrics">Evaluation Metrics</h2>
-<p>The models were evaluated based on the following metrics:</p>
-<ul>
-    <li><strong>Accuracy:</strong> Proportion of correct predictions.</li>
-    <li><strong>Precision:</strong> Ratio of true positives to total predicted positives.</li>
-    <li><strong>Recall:</strong> Ratio of true positives to actual positives.</li>
-    <li><strong>F1 Score:</strong> Harmonic mean of precision and recall.</li>
-    <li><strong>ROC-AUC Score:</strong> Area under the ROC curve.</li>
-</ul>
+## <h3>🏨Web View:</h3>
+The web application allows users to input booking details and view analysis results.
 
-<img src="images/roc_curve.png" alt="ROC Curve" style="width:100%; height:auto;">
+## <h3>🏨Bug or Feature Request:</h3>
+For issues or requests, please visit [GitHub Issues](https://github.com/SinghPriya5/Breast_Cancer/issues).
 
-<h2 id="results">Results</h2>
-<p>The best-performing model was the Random Forest, which achieved an accuracy of 87%. The feature importance analysis showed that lead time and average price per room were key predictors.</p>
+## <h3>🏨Future Scope:</h3>
+Potential improvements and additional features for future updates.
 
-<img src="images/feature_importance.png" alt="Feature Importance" style="width:100%; height:auto;">
+## <h3>🏨Conclusion:</h3>
+Summarized the findings and impact of the project, highlighting key insights and benefits.
 
-<h2 id="conclusion">Conclusion</h2>
-<p>This project successfully developed a machine learning model that can predict hotel booking statuses with high accuracy. The insights gained from this model can help hotels optimize their operations and improve customer satisfaction.</p>
-
-<h2 id="future-work">Future Work</h2>
-<p>Future improvements could include:</p>
-<ul>
-    <li>Integrating additional features like customer reviews.</li>
-    <li>Exploring deep learning approaches.</li>
-    <li>Implementing advanced ensemble methods for further accuracy gains.</li>
-</ul>
-
-<h2 id="requirements">Requirements</h2>
-<ul>
-    <li>Python 3.x</li>
-    <li>NumPy</li>
-    <li>Pandas</li>
-    <li>Scikit-learn</li>
-    <li>Matplotlib/Seaborn (for data visualization)</li>
-    <li>Jupyter Notebook (optional for interactive exploration)</li>
-</ul>
-
-<h2 id="installation">Installation</h2>
-<p>Clone the repository and install the necessary packages:</p>
-
-<pre><code>
-git clone https://github.com/yourusername/Hotel_Reservation_Prediction.git
-cd Hotel_Reservation_Prediction
-pip install -r requirements.txt
-</code></pre>
-
-<h2 id="usage">Usage</h2>
-<p>To explore the data and model:</p>
-
-<pre><code>
-jupyter notebook Hotel_Reservation_Prediction.ipynb
-</code></pre>
-
-<p>To train the model:</p>
-
-<pre><code>
-python train_model.py
-</code></pre>
-
-<h2 id="contributors">Contributors</h2>
-<ul>
-    <li><a href="https://github.com/yourusername">Your Name</a> - Data Scientist</li>
-    <li><a href="https://github.com/collaboratorusername">Collaborator Name</a> - Machine Learning Engineer</li>
-</ul>
-
-</body>
-</html>
