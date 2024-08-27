@@ -3,7 +3,7 @@
 <div style="text-align: center; color: #2c3e50; font-family: 'Trebuchet MS', sans-serif;">
   <h1 style='color:#e74c3c; font-size: 3em; letter-spacing: 2px;'>✿ 𝓗𝓸𝓽𝓮𝓵 𝓑𝓸𝓸𝓴𝓲𝓷𝓰 𝓢𝓽𝓪𝓽𝓾𝓼 ✿</h1>
 </div>
-<img align="right" width="500" height="600" src="https://github.com/SinghPriya5/Breast_Cancer/blob/main/static/images/hotel.webp">
+<img align="right" width="500" height="600" src="https://github.com/SinghPriya5/Hotel_Booking_Status/blob/main/static/booking.png">
 
 <h3>🏨 Table of Content</h3>
 
@@ -150,14 +150,46 @@ Deployed on Render -- [Link](https://github.com/SinghPriya5/Breat_Cancer/issues)
 Analyzed and interpreted the model’s predictions to ensure meaningful and accurate results.
 
 ## <h3>🏨Web View:</h3>
-The web application allows users to input booking details and view analysis results.
+
+**Frontend**
+
+<p align="center">
+  <img src="https://github.com/SinghPriya5/Hotel_Booking_Status/blob/main/static/form.png" alt="Frontend" width="700" height="600">
+</p>
+
+**Inserting Value and Predicted Value**
+
+<p align="center">
+  <img src="https://github.com/SinghPriya5/Hotel_Booking_Status/blob/main/static/form1.png" alt="Inserting Value" width="700" height="500">
+  <img src="https://github.com/SinghPriya5/Hotel_Booking_Status/blob/main/static/form2.png" alt="Predicted Value" width="700" height="500">
+</p>
 
 ## <h3>🏨Bug or Feature Request:</h3>
-For issues or requests, please visit [GitHub Issues](https://github.com/SinghPriya5/Breast_Cancer/issues).
 
-## <h3>🏨Future Scope:</h3>
-Potential improvements and additional features for future updates.
+If you find a bug (the website couldn't handle the query and/or gave undesired results), kindly open an [issue](https://github.com/SinghPriya5/Hotel_Booking_Status/issues) here by including your search query and the expected result.
 
-## <h3>🏨Conclusion:</h3>
-Summarized the findings and impact of the project, highlighting key insights and benefits.
+## <h3>🏨 Future Scope:</h3>
+<ul style="font-family: 'Courier New', monospace; font-size: 1.1em;">
+  <li>Explore additional machine learning algorithms and techniques to improve prediction accuracy and performance.</li>
+  <li>Implement advanced feature engineering to capture more relevant data aspects and enhance model predictions.</li>
+  <li>Optimize the Flask application for faster response times and better scalability to handle higher traffic volumes.</li>
+  <li>Integrate real-time booking data for dynamic analysis and predictions to assist in immediate decision-making.</li>
+  <li>Enhance the frontend user interface for a more intuitive and engaging user experience.</li>
+  <li>Expand the analysis to include more diverse data sources, such as customer reviews and external market conditions.</li>
+</ul>
 
+## <h3>🏨 Conclusion:</h3>
+<div style="font-family: 'Courier New', monospace; font-size: 1.1em;">
+  This project on hotel booking status analysis leverages machine learning to provide valuable insights into booking patterns, customer demographics, and revenue trends. By analyzing booking data, we can identify key factors influencing booking statuses, optimize pricing strategies, and improve customer satisfaction. The findings from this project help in making data-driven decisions that enhance booking management and operational efficiency in the hospitality industry.
+</div>
+
+<div style="text-align: center; font-family: 'Trebuchet MS', sans-serif; color: #e74c3c; margin-top: 20px;">
+  <h2>Thank You!</h2>
+  <img src="https://github.com/SinghPriya5/Hotel_Booking_Status/raw/main/static/hotel_icon.png" alt="Hotel Icon" width="100" height="100">
+</div>
+
+
+<!-- Adding Hotel Icon -->
+<div style="text-align: center;">
+  <img src="https://github.com/SinghPriya5/Hotel_Booking_Status/raw/main/static/hotel_icon.png" alt="Hotel Icon" width="100" height="100">
+</div>
