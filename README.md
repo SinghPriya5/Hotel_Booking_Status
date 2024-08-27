@@ -1,6 +1,6 @@
 <p align="center">
-  <h1>🏨 Welcome to Our Hotel</h1>
-<img  width='400' height='300' src="https://github.com/SinghPriya5/Hotel_Booking_Status/blob/main/static/hotelVideo.mp4"></p>
+  <h1>🏨  𝕎𝔼𝕃ℂ𝕆𝕄𝔼 𝕋𝕆 𝕆𝕌ℝ ℍ𝕆𝕋𝔼𝕃</h1>
+<img  width='400' height='400' src="https://github.com/SinghPriya5/Hotel_Booking_Status/blob/main/static/h.gif"></p>
 
 <div style="text-align: center; color: #2c3e50; font-family: 'Trebuchet MS', sans-serif;">
   <h1 style='color:#e74c3c; font-size: 3em; letter-spacing: 2px;'>✿ 𝓗𝓸𝓽𝓮𝓵 𝓑𝓸𝓸𝓴𝓲𝓷𝓰 𝓢𝓽𝓪𝓽𝓾𝓼 ✿</h1>
