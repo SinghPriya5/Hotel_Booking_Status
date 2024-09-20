@@ -187,5 +187,5 @@ If you find a bug (the website couldn't handle the query and/or gave undesired r
 
 <div style="text-align: center; font-family: 'Trebuchet MS', sans-serif; color: #e74c3c; margin-top: 20px;">
   <h2>Thank You!</h2>
-  <img src="https://github.com/SinghPriya5/Hotel_Booking_Status/blob/main/static/thank-you.gif" alt="Hotel Icon" width="500" height="700">
+  <img src="https://github.com/SinghPriya5/Hotel_Booking_Status/blob/main/static/thank-you.gif" alt="Hotel Icon" width="500" height="400">
 </div>
